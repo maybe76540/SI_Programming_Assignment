@@ -1,3 +1,4 @@
+//이름 순으로 정렬위한 quick sort 구현
 #include <stdio.h>
 #include "student.h"
 #include "quick_sort.h"

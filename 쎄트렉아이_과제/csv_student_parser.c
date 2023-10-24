@@ -22,35 +22,30 @@ void csv_student_parser() {
             for (int i = 0; *p_pos; i++) {
                 p_pos = space_for_next_str(p_pos, ',', buffer);
 
-                // 첫 번째 필드는 이름입니다.
                 if (i == 0) {
                     strncpy(temp_student.name, buffer, sizeof(temp_student.name));
                     temp_student.name[sizeof(temp_student.name) - 1] = '\0'; // Null-terminate the string just in case
                 }
 
-                // 두 번째 필드는 학번입니다.
                 else if (i == 1) {
                     strncpy(temp_student.student_number, buffer, sizeof(temp_student.student_number));
                     temp_student.student_number[sizeof(temp_student.student_number) - 1] = '\0';
                 }
 
-                // 세 번째 필드는 subj_1 점수입니다.
                 else if (i == 2) {
                     temp_student.subj_1 = atoi(buffer);
                 }
 
-                // 네 번째 필드는 subj_2 점수입니다.
                 else if (i == 3) {
                     temp_student.subj_2 = atoi(buffer);
                 }
 
-                // 다섯번 째 필드는 평균 점수입니다.
                 else if (i == 4) {
                     temp_student.average = atof(buffer);
                 }
             }
-
-            students[num_students++] = temp_student;
+            //아래 줄에서 예외 발생해 수정필요함
+            //students[num_students++] = temp_student;
         }
     }
 }

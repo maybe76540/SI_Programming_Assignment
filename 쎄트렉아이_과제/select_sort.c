@@ -1,3 +1,4 @@
+//프로그램에서 정렬할 데이터 선택 위한 파일
 #include<stdio.h>
 #include"quick_sort_by_name.h"
 

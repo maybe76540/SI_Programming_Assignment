@@ -3,14 +3,16 @@
 #include "get_data_num.h"
 #include "csv_student_parser.h"
 
-//프로그램의 입력 데이터 개수(이름, 학번, 과목1, 과목2, 평균)
-//short int title_num = 5;
 
 int main(){
+	//입력된 데이터의 개수 가져오는 함수
 	get_data_num();
 	
-	csv_student_parser();
+	//이미 입력되어있는 데이터를 Student구조체로 불러오는 함수
+	//실행에 오류 있음.
+	//csv_student_parser();
 	
+	//성적관리 프로그램 기능 선택 메뉴
 	select_menu();
 	return 0;
 }

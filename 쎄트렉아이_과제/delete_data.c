@@ -4,6 +4,7 @@ void delete_data(void) {
 	FILE* p_file = NULL;
 	
 	if (0 == fopen_s(&p_file, "data.csv", "rt+")) {
+		//파일포인터를 파일 끝으로 이동시킴
 		fseek(p_file, 0, SEEK_END);
 		long pos = ftell(p_file);
 
@@ -11,12 +12,14 @@ void delete_data(void) {
 			short int cnt_for_del = 0;
 			char ch_for_del;
 
+			//파일포인터를 파일 뒤에서부터 이동
 			while (pos > 0) {
 				fseek(p_file, pos - 1, SEEK_SET);
 				ch_for_del = fgetc(p_file);
 
 				if (ch_for_del == '\n') {
 					//\n 나오기 전까지 지나왔던 문자 \b로 지우고 break;
+					//파일의 마지막줄에 위치한 데이터 지워짐
 					fseek(p_file, pos - 1, SEEK_SET);
 					for (int i = 0; i <= cnt_for_del; i++) {
 						fputc('\b', p_file);

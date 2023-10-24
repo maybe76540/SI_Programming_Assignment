@@ -7,7 +7,8 @@ void write_data(void) {
 	FILE* p_file = NULL;
 
 	Student student;
-
+	
+	//데이터 쓰기위해 파일 열기
 	if (0 == fopen_s(&p_file, "data.csv", "at")) {
 
 		printf("새로운 자료를 입력해주세요. \n");
@@ -35,11 +36,7 @@ void write_data(void) {
 			student.subj_1,
 			student.subj_2,
 			student.average);
-		//fputs("한줄, 내려와서, 글자, 추가, 예제", p_file);
-		/*fputs(Data_Struct.name + ',' + Data_Struct.student_num + ',' +
-			Data_Struct.subj_1 + ',' + Data_Struct.subj_2 + ',' +
-			Data_Struct.everage_subj, p_file);*/
-		//printf("추가된 자료 보여주기")
+
 		fclose(p_file);
 	}
 	else {

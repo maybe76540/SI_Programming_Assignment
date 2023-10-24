@@ -10,21 +10,20 @@ void quick_sort_by_name() {
     Student* students = malloc(num_of_lines * sizeof(Student));
     int count = 0;
 
-    //printf("%s", students[right]);
-    printf("%d \n", num_of_lines); 
+    //printf("%d \n", num_of_lines); 
 
-    if (students == NULL) {
-        printf("students pointer is NULL.");
-    }
-    else {
-        printf("students pointer is not NULL.");
-    }
-
+    //if (students == NULL) {
+    //    printf("students pointer is NULL.");
+    //}
+    //else {
+    //    printf("students pointer is not NULL.");
+    //}
 
     if (0 == fopen_s(&p_file, "data.csv", "rt")) {
         //char* line = malloc(num_of_lines * sizeof(char));
         char one_line_str[128];
         
+        //아래 문장에서 예외 발생
         while (fgets(one_line_str, 128, p_file)) {
             sscanf_s(one_line_str, "%[^,],%[^,],%hd,%hd,%f", students[count].name,
                 students[count].student_number, &students[count].subj_1,
@@ -37,6 +36,8 @@ void quick_sort_by_name() {
     else {
         printf("에러: data.csv 파일을 찾지 못했습니다. 파일을 확인해주세요.");
     }
+
+    //read_data();
     
     quick_sort(students, 0, num_of_lines - 1);
 

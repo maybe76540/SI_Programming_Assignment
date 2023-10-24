@@ -4,6 +4,7 @@ num_of_lines;
 
 int get_data_num(void) {
     FILE* p_file = NULL;
+    num_of_lines = 0;
 
     if (0 == fopen_s(&p_file ,"data.csv", "rt")) {
         
@@ -18,7 +19,7 @@ int get_data_num(void) {
         // 마지막 줄은 줄바꿈 문자가 없지만 title에서도 하나 빼야함
         //num_of_lines++;
 
-        //printf("CSV 파일의 총 줄 수: %d\n", num_of_lines);
+        printf("CSV 파일의 데이터 수: %d\n", num_of_lines);
 
         fclose(p_file);
 
